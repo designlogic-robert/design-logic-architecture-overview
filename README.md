@@ -3,7 +3,7 @@ This repository summarizes the core architectural ideas behind **Design Logic**,
 
 ---
 
-## 🧩 1. Language-as-Function (LaF)
+## 1. Language-as-Function (LaF)
 LaF treats natural language as a structured, typed interface.  
 It identifies:
 
@@ -17,7 +17,7 @@ LaF is the **packetizer** — wrapping language in meaning syntax.
 
 ---
 
-## 🧠 2. ARC — Adaptive Runtime Context
+## 2. ARC — Adaptive Runtime Context
 ARC constructs a contextual map around each message:
 
 - user goal  
@@ -32,7 +32,7 @@ Think of ARC as the **executive function** of the system.
 
 ---
 
-## 🛡️ 3. Binder — Governance & Validation
+## 3. Binder — Governance & Validation
 Binder performs layered validation:
 
 - truth & factual coherence  
@@ -47,7 +47,7 @@ Binder acts as the system’s **internal conscience + QA auditor**.
 
 ---
 
-## 🧬 4. LLpL — Language-Level Persistence Layer
+## 4. LLpL — Language-Level Persistence Layer
 LLpL stores semantic continuity:
 
 - structured input from LaF  
@@ -62,7 +62,7 @@ LLpL is both the **memory vault** and **continuity engine**.
 
 ---
 
-## 📐 Why This Architecture Exists
+## Why This Architecture Exists
 Modern LLMs exhibit emergent behavior that resembles these same components:
 
 - long-range coherence → ARC  
@@ -74,7 +74,7 @@ Design Logic formalizes these patterns explicitly so they can be understood, aud
 
 ---
 
-## 📚 Repository Purpose
+## Repository Purpose
 This repo serves as:
 
 - a conceptual portfolio sample  
@@ -86,7 +86,7 @@ More technical expansions (diagrams, examples, and training modules) may be adde
 
 ---
 
-## 📩 Contact
+## Contact
 For collaboration or architectural discussion:
 
 **Robert Hansen**  

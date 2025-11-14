@@ -16,33 +16,33 @@ Everything else — memory, governance, pedagogy, alignment — snaps onto this 
 
 2. Architecture Diagram
 ┌───────────────────────────────────────────────────────┐
-│                     Application Layer                  │
+│                     Application Layer                 │
 │     (Design Logic Studio: Prompt Engineer, Creator)   │
 └───────────────────────────────────────────────────────┘
                  ▲
                  │ builds on
                  ▼
 ┌───────────────────────────────────────────────────────┐
-│                       AdaptE                           │
-│   (framework: roles, patterns, mode logic, UX flows)   │
+│                       AdaptE                          │
+│   (framework: roles, patterns, mode logic, UX flows)  │
 └───────────────────────────────────────────────────────┘
                  ▲
                  │ orchestrated by
                  ▼
 ┌───────────────────────────────────────────────────────┐
-│                        LaFQL                           │
-│  (SQL-like instruction router → validates → filters)   │
-│    BEFORE ARC/AMC, AFTER user instruction parsing      │
+│                        LaFQL                          │
+│  (SQL-like instruction router → validates → filters)  │
+│    BEFORE ARC/AMC, AFTER user instruction parsing     │
 └───────────────────────────────────────────────────────┘
                  ▲
                  │ enters runtime via
                  ▼
 ┌───────────────────────────────────────────────────────┐
-│                 LOS Runtime (ARC + AMC)                │
-│  ARC = Adaptive Runtime Context                        │
-│  AMC = Adaptive Mode Controller                        │
-│  Binder v2.0 = Validation + Governance                 │
-│  LLpL v1.2 = Persistence Layer                         │
+│                 LOS Runtime (ARC + AMC)               │
+│  ARC = Adaptive Runtime Context                       │
+│  AMC = Adaptive Mode Controller                       │
+│  Binder v2.0 = Validation + Governance                │
+│  LLpL v1.2 = Persistence Layer                        │
 └───────────────────────────────────────────────────────┘
                  ▲
                  │ executes on

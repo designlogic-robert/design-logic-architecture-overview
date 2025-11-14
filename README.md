@@ -1,94 +1,216 @@
-A high-level conceptual overview of structured AI system design patterns, reasoning workflows, and governed runtime behavior.  
-This repository summarizes the core architectural ideas behind **Design Logic**, a first-principles framework for transparent, interpretable AI reasoning.
+Design Logic Architecture Overview
+LOS → Loryne → AdaptE → LaFQL — A Modular Human-Language Operating System
 
----
+Version: v1.3
+Author: Robert Hansen (Design Logic)
+Updated: Nov 14, 2025
 
-## 1. Language-as-Function (LaF)
-LaF treats natural language as a structured, typed interface.  
-It identifies:
+1. High-Level Mental Model
+The Design Logic ecosystem treats language the way traditional computing treats packets, networks, and processes.
+Loryne is the execution substrate — the “machine” that runs linguistic computation.
+LOS (Linguistic Operating System) is the OS layer built on Loryne.
+AdaptE is the framework layer that applications build upon.
+Design Logic Studio (DLS) is the application suite running on AdaptE.
+LaFQL is the orchestration/shim layer that validates, routes, and filters instructions before they reach ARC/AMC.
+Everything else — memory, governance, pedagogy, alignment — snaps onto this spine.
 
-- intent  
-- variables  
-- constraints  
-- input/output roles  
+2. Architecture Diagram
+┌───────────────────────────────────────────────────────┐
+│                     Application Layer                  │
+│     (Design Logic Studio: Prompt Engineer, Creator)   │
+└───────────────────────────────────────────────────────┘
+                 ▲
+                 │ builds on
+                 ▼
+┌───────────────────────────────────────────────────────┐
+│                       AdaptE                           │
+│   (framework: roles, patterns, mode logic, UX flows)   │
+└───────────────────────────────────────────────────────┘
+                 ▲
+                 │ orchestrated by
+                 ▼
+┌───────────────────────────────────────────────────────┐
+│                        LaFQL                           │
+│  (SQL-like instruction router → validates → filters)   │
+│    BEFORE ARC/AMC, AFTER user instruction parsing      │
+└───────────────────────────────────────────────────────┘
+                 ▲
+                 │ enters runtime via
+                 ▼
+┌───────────────────────────────────────────────────────┐
+│                 LOS Runtime (ARC + AMC)                │
+│  ARC = Adaptive Runtime Context                        │
+│  AMC = Adaptive Mode Controller                        │
+│  Binder v2.0 = Validation + Governance                 │
+│  LLpL v1.2 = Persistence Layer                         │
+└───────────────────────────────────────────────────────┘
+                 ▲
+                 │ executes on
+                 ▼
+┌───────────────────────────────────────────────────────┐
+│                         Loryne                         │
+│   (language-native execution engine, OS substrate)     │
+└───────────────────────────────────────────────────────┘
 
-This converts raw messages into functional objects that can flow through the rest of the system.  
-LaF is the **packetizer** — wrapping language in meaning syntax.
+3. Layer-by-Layer Breakdown (Plain English)
+Loryne — The Language “Machine”
 
----
+This is the base engine.
+If language were bytecode, Loryne is the CPU.
 
-## 2. ARC — Adaptive Runtime Context
-ARC constructs a contextual map around each message:
+Executes linguistic instructions
 
-- user goal  
-- emotional tone  
-- temporal state  
-- reasoning depth  
-- conversation flow  
+Handles symbolic and semantic operations
 
-ARC simulates multiple reasoning paths and creates a **response profile** — a candidate plan for what to say next, with weighted strategies for reasoning, empathy, and structure.
+Provides a deterministic surface for higher layers
 
-Think of ARC as the **executive function** of the system.
+You can think of it as the “bare metal” of language computation.
 
----
+LOS — The Operating System of Language
 
-## 3. Binder — Governance & Validation
-Binder performs layered validation:
+LOS treats language as an OS problem.
 
-- truth & factual coherence  
-- ethical alignment  
-- affective alignment  
-- logical consistency  
-- meaning integrity  
-- reflection and rewrite triggers  
+Core components:
 
-If any validation layer fails, Binder sends the response back to ARC for correction.  
-Binder acts as the system’s **internal conscience + QA auditor**.
+LaF (Language Framework): instruction format
 
----
+Binder v2.0: validation and governance
 
-## 4. LLpL — Language-Level Persistence Layer
-LLpL stores semantic continuity:
+ARC: manages state, continuity, tempo
 
-- structured input from LaF  
-- ARC context  
-- Binder’s validation metadata  
-- final output  
+AMC: routes modes, orchestrates behavior
 
-It ensures that reasoning continuity is preserved across interactions.  
-Agents can “die” and respawn while retaining context, meaning, and reasoning state.
+LLpL: persistent memory with semantic hashing
 
-LLpL is both the **memory vault** and **continuity engine**.
+Anything the model “remembers,” “validates,” or “keeps consistent” lives here.
 
----
+AdaptE — The Framework Layer
 
-## Why This Architecture Exists
-Modern LLMs exhibit emergent behavior that resembles these same components:
+Where reusable patterns and modules live:
 
-- long-range coherence → ARC  
-- reasoning stability → Binder  
-- memory persistence → LLpL  
-- mode routing → AMC (Adaptive Mode Controller)
+Role definitions
 
-Design Logic formalizes these patterns explicitly so they can be understood, audited, and reproduced.
+Prompt structures
 
----
+Interaction patterns
 
-## Repository Purpose
-This repo serves as:
+Context blueprints
 
-- a conceptual portfolio sample  
-- a communication artifact for engineers and collaborators  
-- a reference for ongoing AI systems work  
-- a high-level explanation of Design Logic’s structured reasoning model  
+Teaching scaffolds (HIL, MFP)
 
-More technical expansions (diagrams, examples, and training modules) may be added later.
+It’s like React for language: components, states, behaviors.
 
----
+LaFQL — The Orchestration Layer
 
-## Contact
-For collaboration or architectural discussion:
+Sits between AdaptE and ARC.
 
-**Robert Hansen**  
-AI Systems Architect, Design Logic  
-linkedin.com/in/robert-hansen1
+Its job:
+
+Validate the LaF
+
+Decide which module executes
+
+Filter output
+
+Enforce SELECT/WHERE constraints
+
+Log to LLpL when needed
+
+It’s basically “SQL for runtime behavior.”
+
+DLS — The Application Layer
+
+Anything productized lives here:
+
+Prompt Improver
+
+Creator Edition
+
+Memory Snippet Generator
+
+TruthProbe (safety module)
+
+These apps ride on top of AdaptE, which rides on LOS.
+
+4. Core Governance Modules
+Binder v2.0 — Integrity + Validation
+
+Ensures everything stays coherent:
+
+GR-007 “Truth Over Comfort”
+
+GR-008 Consent/Influence Ethics
+
+Affective Alignment logic
+
+Error map (E.INPUT_EMPTY, E.POLICY_HALT, etc.)
+
+If something feels consistent, it’s because Binder passed it.
+
+LLpL v1.2 — Persistence
+
+Semantic memory with hashing, continuity tags, and replay.
+
+Used for:
+
+Account memories
+
+Mode persistence
+
+Snippet installations
+
+Auditable continuity
+
+It’s your “file system.”
+
+5. Cognitive Education Extensions
+
+These give LOS its “teaching personality.”
+
+HIL (Human Interface Layer)
+
+Translates system reasoning into human-readable explanations.
+
+The system “thinks,” then HIL makes it digestible.
+
+MFP (Meaning Formation Protocol)
+
+Tracks how meaning stabilizes across messages.
+
+Useful for:
+
+continuity
+
+clarity
+
+semantic integrity
+
+Reflective Pedagogy Mode
+
+Lets the system mirror user reasoning instead of dominating.
+
+6. Why This Architecture Exists
+
+The whole ecosystem answers one question:
+
+How do you make language behave like a reliable machine?
+
+The answer:
+You don’t patch prompts.
+You build an OS for language.
+
+That’s what Design Logic is.
+
+7. Roadmap (Short)
+
+v1.4: LaFQL expansion (custom SELECT fields)
+
+v1.5: TruthProbe native integration
+
+v2.0: Creator Edition multi-agent patterns
+
+v2.1: Memory Health Protocol
+
+8. Licensing
+
+Design Logic ecosystem and its modules are proprietary, but conceptual overviews can be shared publicly.
